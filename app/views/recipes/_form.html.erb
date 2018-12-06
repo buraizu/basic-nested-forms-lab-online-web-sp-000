@@ -1,3 +1,3 @@
-<%= form_for @recipe do |f| %>
-  Title: <%= f.text_field :title %>
+<%= form_for @recipe do |recipe_builder| %>
+  Title: <%= recipe_builder.text_field :title %>
 <% end %>

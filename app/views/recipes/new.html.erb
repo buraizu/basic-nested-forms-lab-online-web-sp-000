@@ -1,1 +1,28 @@
-<%= render 'form', recipe: @recipe %>
+<!-- <%= render 'form', recipe: @recipe %> -->
+
+
+<%= form_for @recipe do |recipe_builder| %>
+
+  <%= recipe_builder.label :title %>
+  <%= recipe_builder.text_field :title %>
+
+  <%= recipe_builder.fields_for :ingredients do |ingredient_builder| %>
+    
+    <%= ingredient_builder.label :ingredient_1 %>
+    <%= ingredient_builder.text_field :ingredient_1 %>
+
+    <%= ingredient_builder.label :quantity_1 %>
+    <%= ingredient_builder.text_field :quantity_1 %>
+
+    <%= ingredient_builder.label :ingredient_2 %>
+    <%= ingredient_builder.text_field :ingredient_2 %>
+
+    <%= ingredient_builder.label :quantity_2 %>
+    <%= ingredient_builder.text_field :quantity_2 %>
+  <% end %>
+
+  <%= recipe_builder.submit %>
+
+<% end %>
+
+<!-- "<label for=\"recipe_ingredients_attributes_0_ingredient_1\">Ingredient 1</label>" -->
